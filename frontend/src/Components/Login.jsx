@@ -21,8 +21,9 @@ function Login() {
     const navigate = useNavigate();
 
     const {userLogin , userDetail} = useSelector(state=>  state.UserDetails);;
-    const getEmail = userDetail.userRegisterOrNot.email;
-    const getPassword = userDetail.userRegisterOrNot.password;
+    // const getEmail = userDetail.userRegisterOrNot.email;
+    // const getPassword = userDetail.userRegisterOrNot.password;
+  
     // userDetail =="" ?console.log(" : ") : console.log(userDetail.userRegisterOrNot.email)
 
 
