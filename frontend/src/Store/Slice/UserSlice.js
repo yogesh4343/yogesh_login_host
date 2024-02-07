@@ -53,7 +53,7 @@ export function RegisterReducer(name , email , password){
             
             // const {data} = await axios.post(`/api/login`, { email , password} , config)
 
-            const {data} = await axios.post(`${window.location.origin}/api/register`, {name , email , password})
+            const {data} = await axios.post(`https://yogesh-login-host-api.vercel.app/api/register`, {name , email , password})
             // const {data} = await axios.post(`http://localhost:4000/api/register`, {name , email , password})
             // console.log("datad ", data)
             dispatch(
@@ -91,7 +91,7 @@ export function LoginReducer( email , password){
             
             // const {data} = await axios.post(`/api/login`, { email , password} , config)
 
-            const {data} = await axios.post(`${window.location.origin}/api/login`, { email , password})
+            const {data} = await axios.post(`https://yogesh-login-host-api.vercel.app/api/login`, { email , password})
             // const {data} = await axios.post(`http://localhost:4000/api/login`, { email , password})
             // console.log("datad ", data)
             dispatch(
