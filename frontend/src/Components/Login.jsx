@@ -26,9 +26,12 @@ function Login() {
     // userDetail =="" ?console.log(" : ") : console.log(userDetail.userRegisterOrNot.email)
 
 
-    const [email , setEmail] = useState(getEmail)
+    // const [email , setEmail] = useState(getEmail)
+    const [email , setEmail] = useState("")
+  
     // const [email , setEmail] = useState(userLogin.LoginOrNot.email)
-    const [password , setPassword] = useState(getPassword);
+    const [password , setPassword] = useState("");
+    // const [password , setPassword] = useState(getPassword);
 
     // console.log(email , password);
 
@@ -106,10 +109,12 @@ function Login() {
                 </MDBCol> */}
               </MDBRow>
 
-              <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+{/*               <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email' value={email} onChange={(e)=>setEmail(e.target.value)}/> */}
+              <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email' onChange={(e)=>setEmail(e.target.value)}/>
               {/* <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email' value={email}/> */}
               {/* <MDBInput wrapperClass='mb-4' label='Password' id='form4' type='password' value={password}    /> */}
-              <MDBInput wrapperClass='mb-4' label='Password' id='form4' type='password' value={password} onChange={(e)=>setPassword(e.target.value)}    />
+{/*               <MDBInput wrapperClass='mb-4' label='Password' id='form4' type='password' value={password} onChange={(e)=>setPassword(e.target.value)}    /> */}
+              <MDBInput wrapperClass='mb-4' label='Password' id='form4' type='password'  onChange={(e)=>setPassword(e.target.value)}    />
 
             
 
