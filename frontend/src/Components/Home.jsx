@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div>
- <h2 style={{color: "rgb(51 79 135)"}}  className="my-3 display-3 fw-bold ls-tight"  >Ho</h2>
+ <h2 style={{color: "rgb(51 79 135)"}}  className="my-3 display-3 fw-bold ls-tight"  >Hello There! U are Logged In </h2>
  <br /> <br /> <br /> <br /> 
  <button onClick={signOutFunc}>Sign Out </button>        
     </div>
