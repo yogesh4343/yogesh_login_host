@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // require('dotenv').config()
 // const dotenv = require('dotenv')
 // dotenv.config({path:"./backend/config/config.env"});
-// dotenv.config({path:"./../backend/config/config.env"});
+dotenv.config({path:"./../backend/config/config.env"});
 
 
 
@@ -134,4 +134,32 @@ exports.AllUser = async(req,res,next)=>{
     } catch (error) {
         console.log(error);
     }
+}
+
+
+
+
+
+
+// ==============
+
+exports.SignOut = async(req, res, next)=>{
+
+    // const cont = req.existingUserByAuth;
+
+    
+
+    // if(!cont){
+    //     return res.status(200).json({status:false,message:"You r already log out"});
+    //   }
+
+      res.cookie("token" , null ,{
+        expires: new Date(Date.now()),
+        httpOnly : true
+    })
+
+
+      return res.status(200).json({status:true, message:"Logged out" });
+
+
 }
