@@ -145,14 +145,6 @@ exports.AllUser = async(req,res,next)=>{
 
 exports.SignOut = async(req, res, next)=>{
 
-    // const cont = req.existingUserByAuth;
-
-    
-
-    // if(!cont){
-    //     return res.status(200).json({status:false,message:"You r already log out"});
-    //   }
-
       res.cookie("token" , null ,{
         expires: new Date(Date.now()),
         httpOnly : true
