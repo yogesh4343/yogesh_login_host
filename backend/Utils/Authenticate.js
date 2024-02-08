@@ -19,8 +19,10 @@ exports.Authenticate = async(req,res,next)=>{
         return res.status(400).json({status:false  , message:"Tokn not found" })
     }
 
+    const SECRET_KEY = "value";
     // verifyToken 
-    const decodedData = jwt.verify(spl[1] , process.env.SECRET_KEY);
+    const decodedData = jwt.verify(spl[1] , SECRET_KEY);
+    // const decodedData = jwt.verify(spl[1] , process.env.SECRET_KEY);
     console.log("decodedData" , decodedData)
     req.existingUserByAuth = await User.findById(decodedData.id);
 
