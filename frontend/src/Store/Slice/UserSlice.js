@@ -126,7 +126,8 @@ export function LogOutReducer( ){
             )
             dispatch(
                 getLogOut(data)
-            )
+            );
+             localStorage.setItem('yogesh_login_signup' , JSON.stringify({}));
         }catch(error){
             dispatch (getStatus(STATUS.ERROR))
         }
