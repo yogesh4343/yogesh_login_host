@@ -28,15 +28,17 @@ const UserSlice = createSlice({
         },
         getUserLogin(state,action){
             state.userLogin = action.payload
+        },
+        getLogOut(state,action){
+            state.userLogin = {}
         }
-
 
     }
 })
 
 export default UserSlice.reducer;
 
-export const {getStatus , getUserDetail , getUserLogin } = UserSlice.actions
+export const {getStatus , getUserDetail , getUserLogin , getLogOut } = UserSlice.actions
 
 
 export function RegisterReducer(name , email , password){
@@ -82,14 +84,7 @@ export function LoginReducer( email , password){
     return async function LoginThunk(dispatch , getState) {
 
         dispatch(getStatus(STATUS.LOADING))
-
-        // const config = { headers : { "Content-Type" : "application/json"}};
         try{
-
-            //  console.log("slice" , obj); 
-
-            
-            // const {data} = await axios.post(`/api/login`, { email , password} , config)
 
             const {data} = await axios.post(`https://yogesh-login-host-api.vercel.app/api/login`, { email , password})
             // const {data} = await axios.post(`http://localhost:4000/api/login`, { email , password})
@@ -111,3 +106,30 @@ export function LoginReducer( email , password){
 
 
 // http://192.168.1.3:3000 
+
+
+
+
+
+
+export function LogOutReducer( ){
+    return async function LogOutOutThunk(dispatch , getState) {
+        
+        dispatch(getStatus(STATUS.LOADING))
+        
+        try{
+            const {data} = await axios.get(`https://yogesh-login-host-api.vercel.app/api/logout`)
+            console.log("LogOutReducer" ); 
+            console.log("logout" , data);
+            dispatch(
+                getStatus(STATUS.IDLE),
+            )
+            dispatch(
+                getLogOut(data)
+            )
+        }catch(error){
+            dispatch (getStatus(STATUS.ERROR))
+        }
+    }
+}
+
